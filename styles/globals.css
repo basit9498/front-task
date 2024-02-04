@@ -1,33 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+* {
+  font-family: 'Roboto', sans-serif !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.custom-container {
+  max-width: 1140px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Layout style */
+.header-section {
+  @apply flex justify-between items-center mt-5
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.logo {
+  @apply flex items-center gap-x-3 flex-1
+}
+
+.logo span {
+  @apply h-12 w-12 bg-primary flex items-center justify-center rounded-md
+}
+
+.logo h1 {
+  @apply font-bold text-2xl
+}
+
+.header-search {
+  @apply flex-1
+}
+
+.header-search input {
+  @apply bg-gray-200 h-12 outline-none rounded-full indent-4 w-full
+}
+
+.nav-section {
+  @apply fixed top-0 left-0 bg-white w-full h-screen z-50 lg:h-max lg:w-full lg:static lg:translate-x-0
+}
+
+.nav-list {
+  @apply flex flex-col gap-y-2 lg:flex-row lg:justify-evenly items-center gap-x-3 xl:gap-x-6
+}
+
+/*  */
+.cards-section {
+  @apply grid grid-cols-1 gap-y-4 lg:gap-y-0 sm:grid-cols-2 lg:grid-cols-5 mt-6 gap-x-4
+}
+
+.slick-slide>div {
+  margin: 25px 15px;
+
+}
+
+.home-silder .slick-arrow {
+  border: 1px solid #525252;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 40px;
+  width: 40px;
+
+}
+
+.home-silder .slick-next::before,
+.home-silder .slick-prev::before {
+  content: '';
 }
